@@ -55,18 +55,23 @@
     const music = document.getElementById("music");
     const envelope = document.querySelector(".envelope");
 
-    card.addEventListener("click", () => {
+    function toggleCard() {
       card.classList.toggle("open");
 
       if (card.classList.contains("open")) {
         music.volume = 0.4;
-        music.play();
+        music.play().catch(() => console.log("Toque manual necessário"));
       } else {
         music.pause();
         music.currentTime = 0;
       }
-    });
+    }
+
+    // Suporte click e touch
+    card.addEventListener("click", toggleCard);
+    card.addEventListener("touchstart", toggleCard);
   </script>
 
 </body>
 </html>
+
