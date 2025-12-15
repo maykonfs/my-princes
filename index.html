@@ -10,7 +10,11 @@
 <body>
 
   <!-- Envelope -->
-  <img class="envelope" src="https://assets.codepen.io/4927073/Envelope3.png" alt="Envelope">
+  <img 
+    class="envelope" 
+    src="https://assets.codepen.io/4927073/Envelope3.png" 
+    alt="Envelope"
+  >
 
   <!-- Cartão -->
   <div class="card" id="card">
@@ -26,21 +30,20 @@
     <div class="front">
       <div class="f-box">
         <div class="photo-container">
-            <div class="photo-container">
-  <h2 class="photo-text">Clique na foto 💌</h2>
 
+          <h2 class="photo-text">Clique na foto 💌</h2>
 
-  <!-- Corações -->
-  <div class="hearts">
-    <span class="heart">❤️</span>
-    <span class="heart">💖</span>
-    <span class="heart">💜</span>
-    <span class="heart">💗</span>
-  </div>
-</div>
+          <!-- Corações -->
+          <div class="hearts">
+            <span class="heart">❤️</span>
+            <span class="heart">💖</span>
+            <span class="heart">💜</span>
+            <span class="heart">💗</span>
+          </div>
 
-        
-          <img src="WhatsApp Image 2025-12-14 at 20.43.25.jpeg" alt="Foto da princesa">
+          <!-- Imagem -->
+          <img src="foto.jpeg" alt="Foto da princesa">
+
         </div>
       </div>
     </div>
@@ -49,7 +52,7 @@
 
   <!-- Música -->
   <audio id="music" loop>
-    <source src="Lana Del Rey - Say Yes To Heaven (Official Audio).mp3" type="audio/mpeg">
+    <source src="say_yes_to_heaven.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
@@ -63,7 +66,7 @@
 
       if (card.classList.contains("open")) {
         music.volume = 0.4;
-        music.play();
+        music.play().catch(() => {});
       } else {
         music.pause();
         music.currentTime = 0;
