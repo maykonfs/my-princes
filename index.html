@@ -6,31 +6,18 @@
   <title>Memória para minha princesa</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <!-- Envelope -->
-  <img 
-    class="envelope" 
-    src="https://assets.codepen.io/4927073/Envelope3.png" 
-    alt="Envelope"
-  >
+  <img class="envelope" src="https://assets.codepen.io/4927073/Envelope3.png" alt="Envelope">
 
   <!-- Cartão -->
   <div class="card" id="card">
-
-    <!-- Verso -->
-    <div class="back">
-      <div class="text-container">
-        <p>Minha ouro branco, te amo 💖</p>
-      </div>
-    </div>
 
     <!-- Frente -->
     <div class="front">
       <div class="f-box">
         <div class="photo-container">
-
           <h2 class="photo-text">Clique na foto 💌</h2>
 
           <!-- Corações -->
@@ -41,10 +28,16 @@
             <span class="heart">💗</span>
           </div>
 
-          <!-- Imagem -->
-          <img src="foto.jpeg" alt="Foto da princesa">
-
+          <!-- Foto -->
+          <img src="princesa.jpeg" alt="Foto da princesa">
         </div>
+      </div>
+    </div>
+
+    <!-- Verso -->
+    <div class="back">
+      <div class="text-container">
+        <p>Minha ouro branco, te amo 💖</p>
       </div>
     </div>
 
@@ -60,13 +53,14 @@
   <script>
     const card = document.getElementById("card");
     const music = document.getElementById("music");
+    const envelope = document.querySelector(".envelope");
 
     card.addEventListener("click", () => {
       card.classList.toggle("open");
 
       if (card.classList.contains("open")) {
         music.volume = 0.4;
-        music.play().catch(() => {});
+        music.play();
       } else {
         music.pause();
         music.currentTime = 0;
