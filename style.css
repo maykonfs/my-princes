@@ -31,9 +31,12 @@ body {
 .card {
   position: relative;
   width: 200px;
+  max-width: 90vw;
   height: 270px;
+  max-height: 80vh;
   perspective: 1000px;
   cursor: pointer;
+  transform-style: preserve-3d; /* importante para mobile */
 }
 
 /* Faces do cartão */
@@ -63,12 +66,8 @@ body {
 }
 
 /* Virar cartão */
-.card.open .front {
-  transform: rotateY(-180deg);
-}
-.card.open .back {
-  transform: rotateY(0deg);
-}
+.card.open .front { transform: rotateY(-180deg); }
+.card.open .back { transform: rotateY(0deg); }
 
 /* Zoom da imagem */
 .photo-container img {
@@ -161,3 +160,4 @@ body {
   .envelope { width: 240px; left: 10%; }
   .card { width: 170px; height: 230px; }
 }
+
